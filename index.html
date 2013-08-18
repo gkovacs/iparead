@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-1.9.1.js"></script>
+<script src="getstyleobject.js"></script>
+<script src="textwidth.js"></script>
+<script src="scaletomatchtextwidth.js"></script>
+<script src="index.js"></script>
+<style>
+#styledText {
+  color: red;
+}
+</style>
+</head>
+<body style="background-color: grey">
+
+<p id="target">target</p><br/>
+<p id="destination" style="display: inline-block">destination</p><br/>
+
+<a href="google.com">here is a link</a> does it still work?
+
+<br/>
+<span>Here is some ordinary text</span>
+<br/><br/><br/>
+<div id="styledTextWrapper">
+<span style="background-color: yellow" id="styledText">Here is yet more ordinary but <b>bold</b> and <i style="color: green">extended italicized</i> text</span>
+</div>
+
+<div id="display">
+</div>
+
+</body>
+</html>
