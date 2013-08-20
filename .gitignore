@@ -5,4 +5,7 @@ getprononciation.js
 app.js
 index.js
 jquery-1.9.1.js
+getIPA.js
+cmudict.js
+ipaoverlay.js
 

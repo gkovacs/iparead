@@ -6,7 +6,9 @@ httport = process.env.PORT ? 5000
 httpserver.listen(httport, '0.0.0.0')
 webRoot = 'http://ipakaraoke.herokuapp.com/'
 
-getprononciation = require './getprononciation'
+#cmudict = require './cmudict'
+
+#getprononciation = require './getprononciation'
 
 app.configure('development', () ->
   app.use(express.errorHandler())
@@ -22,13 +24,17 @@ app.configure( ->
   app.use(express.static(__dirname + '/'))
 )
 
-app.get '/getIPA', (req, res) ->
-  console.log req
-  lang = req.query.lang
-  word = req.query.word
-  
-  getprononciation.getIPARateLimitedCached(word, (ipa_pronunc) ->
-    res.send ipa_pronunc
-  )
-  #res.send lang
-  #res.send req.toString()
+#app.get '/getIPA', (req, res) ->
+#  console.log req
+#  lang = req.query.lang
+#  word = req.query.word
+#  
+#  res.send cmudict.getIPA(word)
+#  
+#  #getprononciation.getIPARateLimitedCached(word, (ipa_pronunc) ->
+#  #  res.send ipa_pronunc
+#  #)
+#  
+#  #res.send lang
+#  #res.send req.toString()
+

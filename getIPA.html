@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-1.9.1.js"></script>
+<script src="ipadict_en.js"></script>
+<script src="getIPA.js"></script>
+<script>
+
+function getUrlParameters() {
+  var map = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+    map[key] = value;
+  });
+  return map; 
+}
+
+$(document).ready(function() {
+  var urlParameters = getUrlParameters()
+  var word = urlParameters['word']
+  if (word == null) {
+    word = 'hello'
+  }
+  var lang = urlParameters['lang']
+  if (lang == null) {
+    lang = 'en'
+  }
+  getIPA(word, lang, function(ipa) {
+    $('body').text(ipa)
+  })
+})
+</script>
+</head>
+<body>
+</body>
+</html>
